@@ -1,6 +1,6 @@
 import React from 'react';
-import {CardContent, Typography, Card, makeStyles, Box, Button, ButtonGroup, Toolbar, Grid} from "@material-ui/core";
-import MemoryIcon from "@material-ui/icons/Memory";
+import {CardContent, Typography, Card, makeStyles, Box, Button, Grid, ButtonGroup} from "@material-ui/core";
+
 
 class Results extends React.Component {
     useStyles = makeStyles({
@@ -84,31 +84,6 @@ class Results extends React.Component {
 
 
                 </div>
-
-
-                            <Box pt={2}>
-                                <Grid
-                                    container
-                                    direction="row"
-                                    justify="space-between"
-                                    className="content"
-                                >
-
-                                    <Button
-                                        color="primary"
-                                        variant="outlined"
-                                        startIcon={<MemoryIcon/>}>
-                                        Configure Serial
-                                    </Button>
-
-                                    <Button
-                                        variant="contained"
-                                        color="secondary">
-                                        Emulate
-                                    </Button>
-
-                                </Grid>
-                            </Box>
 
 
 

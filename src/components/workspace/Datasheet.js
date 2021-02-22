@@ -1,9 +1,8 @@
-import {Box, FormControl, Typography, Button, MenuItem, Grid, ButtonGroup, IconButton} from "@material-ui/core";
-import {OpenInBrowser} from "@material-ui/icons";
+import {Box, FormControl, Typography, Button, MenuItem, Grid, ButtonGroup} from "@material-ui/core";
 import {Formik, Form, Field} from 'formik';
 import {TextField} from 'formik-material-ui';
-import SaveDialog from "./SaveDialog";
-import OpenDialog from "./OpenDIalog";
+import SaveDialog from "./popups/SaveDialog";
+import OpenDialog from "./popups/OpenDIalog";
 
 
 function ModuleData(props) {
@@ -56,7 +55,7 @@ function ModuleData(props) {
 
         <FormControl>
 
-            <Typography variant="h5">Module Data</Typography>
+            <Typography variant="h5">Photovoltaic Module Data</Typography>
 
             <Formik
 

@@ -51,7 +51,7 @@ export default function SaveDialog(props) {
                     <Button onClick={async () => {
                         await (props.update(props.values));
                         const data = JSON.stringify(props.get());
-                        const blob = new Blob([data], {type: 'application/json;charset=utf-8'});
+                        const blob = new Blob([data], {type: 'application/popups;charset=utf-8'});
                         const dataURL = window.URL.createObjectURL(blob);
                         let tempLink = document.createElement('a');
                         tempLink.href = dataURL;
