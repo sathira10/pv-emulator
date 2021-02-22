@@ -1,5 +1,6 @@
 import React from 'react';
-import {CardContent, Typography, Card, makeStyles, Box, Button, ButtonGroup} from "@material-ui/core";
+import {CardContent, Typography, Card, makeStyles, Box, Button, ButtonGroup, Toolbar, Grid} from "@material-ui/core";
+import MemoryIcon from "@material-ui/icons/Memory";
 
 class Results extends React.Component {
     useStyles = makeStyles({
@@ -84,22 +85,34 @@ class Results extends React.Component {
 
                 </div>
 
-                <Box pt={3} bp={3}>
-                    <div className="root">
-                        <div className="content">
 
-                            <ButtonGroup className="icon">
-                                <Button
+                            <Box pt={2}>
+                                <Grid
+                                    container
+                                    direction="row"
+                                    justify="space-between"
+                                    className="content"
+                                >
 
-                                    variant="contained"
-                                    color="secondary">
-                                    Emulate
-                                </Button>
-                            </ButtonGroup>
+                                    <Button
+                                        color="primary"
+                                        variant="outlined"
+                                        startIcon={<MemoryIcon/>}>
+                                        Configure Serial
+                                    </Button>
 
-                        </div>
-                    </div>
-                </Box>
+                                    <Button
+                                        variant="contained"
+                                        color="secondary">
+                                        Emulate
+                                    </Button>
+
+                                </Grid>
+                            </Box>
+
+
+
+
             </div>
 
         )

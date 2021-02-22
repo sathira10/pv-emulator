@@ -49,7 +49,7 @@ class Workspace extends React.Component {
 
     render() {
         return(
-            <div className="container-fluid" style={{ width: "90%" }}>
+            <div className="container-fluid mb-5" style={{ width: "90%" }}>
                 <div className="row d-flex">
                     <div className="col-lg-5 justify-content-center">
                         <Box pt={4}>

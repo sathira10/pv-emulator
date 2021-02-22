@@ -32,13 +32,13 @@ export default function SaveDialog(props) {
                 <Save/>
             </IconButton>
             <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
-                <DialogTitle id="form-dialog-title">Subscribe</DialogTitle>
+                <DialogTitle id="form-dialog-title">Save</DialogTitle>
                 <DialogContent>
 
                     <TextField
                         autoFocus
                         margin="dense"
-                        label="Panel name"
+                        label="pv module name"
                         type="text"
                         onChange={handleNameChange}
                         fullWidth

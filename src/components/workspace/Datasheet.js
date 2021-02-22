@@ -2,8 +2,8 @@ import {Box, FormControl, Typography, Button, MenuItem, Grid, ButtonGroup, IconB
 import {OpenInBrowser} from "@material-ui/icons";
 import {Formik, Form, Field} from 'formik';
 import {TextField} from 'formik-material-ui';
-import SaveDialog from "../main/SaveDialog";
-import OpenDialog from "../main/OpenDIalog";
+import SaveDialog from "./SaveDialog";
+import OpenDialog from "./OpenDIalog";
 
 
 function ModuleData(props) {
