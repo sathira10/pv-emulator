@@ -1,8 +1,9 @@
-import React, {useRef} from 'react';
-
-import {Box, FormControl, Typography, Button, MenuItem, Grid, ButtonGroup} from "@material-ui/core";
+import {Box, FormControl, Typography, Button, MenuItem, Grid, ButtonGroup, IconButton} from "@material-ui/core";
+import {OpenInBrowser} from "@material-ui/icons";
 import {Formik, Form, Field} from 'formik';
 import {TextField} from 'formik-material-ui';
+import SaveDialog from "../main/SaveDialog";
+import OpenDialog from "../main/OpenDIalog";
 
 
 function ModuleData(props) {
@@ -48,7 +49,6 @@ function ModuleData(props) {
     //     const data = JSON.stringify(get());
     //     console.log(data)
     //
-
 
 
     // }
@@ -216,53 +216,21 @@ function ModuleData(props) {
                                 container
                                 direction="row"
                                 justify="space-between"
+                                className="content"
                             >
                                 <ButtonGroup variant="outlined" color="primary">
 
-                                    <Button component="label">
-                                        Load
-                                        <input type="file" accept=".json" onChange={
-                                            async (e) => {
-                                                e.preventDefault()
-                                                const reader = new FileReader()
-                                                reader.onload = async (e) => {
-                                                    const text = (e.target.result)
-                                                    let module_data = JSON.parse(text);
-                                                    console.log(module_data);
-                                                    setFieldValue('Voc', module_data.Voc)
-                                                    setFieldValue('Isc', module_data.Voc)
-                                                    setFieldValue('Voc', module_data.Isc)
-                                                    setFieldValue('Imp', module_data.Imp)
-                                                    setFieldValue('Vmp', module_data.Vmp)
-                                                    setFieldValue('N', module_data.N)
-                                                    setFieldValue('alpha', module_data.alpha)
-                                                    setFieldValue('beta', module_data.beta)
-                                                    setFieldValue('C', 25)
-                                                    setFieldValue('G', 1000)
-                                                    setFieldValue('cell_type', module_data.cell_type)
+                                    <OpenDialog
+                                        setFieldValue={setFieldValue}>
+                                    </OpenDialog>
+
+                                    <SaveDialog
+                                        values={values}
+                                        update={update}
+                                        get={get}>
+                                    </SaveDialog>
 
 
-                                                };
-                                                reader.readAsText(e.target.files[0])
-                                            }
-                                        } hidden/>
-                                    </Button>
-
-                                    <Button onClick={async() => {
-                                        await(update(values));
-                                        const data = JSON.stringify(get());
-                                        const blob = new Blob([data], {type: 'application/json;charset=utf-8'});                   // Step 3
-                                        const dataURL = window.URL.createObjectURL(blob);
-                                        let tempLink = document.createElement('a');
-                                        tempLink.href = dataURL;
-                                        tempLink.setAttribute('download', 'filename.json');
-                                        tempLink.click();
-
-
-                                    }
-                                    }>
-                                        Save
-                                    </Button>
                                 </ButtonGroup>
 
                                 <ButtonGroup>

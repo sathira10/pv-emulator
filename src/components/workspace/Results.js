@@ -1,5 +1,5 @@
 import React from 'react';
-import {CardContent, Typography, Card, makeStyles, Box, Button} from "@material-ui/core";
+import {CardContent, Typography, Card, makeStyles, Box, Button, ButtonGroup} from "@material-ui/core";
 
 class Results extends React.Component {
     useStyles = makeStyles({
@@ -88,13 +88,14 @@ class Results extends React.Component {
                     <div className="root">
                         <div className="content">
 
-
+                            <ButtonGroup className="icon">
                                 <Button
-                                    className="icon"
+
                                     variant="contained"
                                     color="secondary">
                                     Emulate
                                 </Button>
+                            </ButtonGroup>
 
                         </div>
                     </div>
