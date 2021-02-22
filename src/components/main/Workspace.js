@@ -42,6 +42,11 @@ class Workspace extends React.Component {
         this.setState({data: data})
     }
 
+    get_data = () => {
+        return(this.state.data);
+    }
+
+
     render() {
         return(
             <div className="container-fluid" style={{ width: "90%" }}>
@@ -50,7 +55,7 @@ class Workspace extends React.Component {
                         <Box pt={4}>
                             <Paper display="flex" elevation={4}>
                                 <Box p={3}>
-                                    <Datasheet update={this.update_data} />
+                                    <Datasheet update={this.update_data} get={this.get_data} />
                                 </Box>
                             </Paper>
                         </Box>

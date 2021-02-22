@@ -42,7 +42,21 @@ class ModuleData extends React.Component {
             },
         ];
 
+        const saveData = (event) => {
+            event.preventDefault();
+            this.props.update(this.values)
+            const data = JSON.stringify(this.props.get());
+            console.log(data)
 
+
+            // const blob = new Blob([data], {type: 'application/json;charset=utf-8'});                   // Step 3
+            // const dataURL = window.URL.createObjectURL(blob);
+            // let tempLink = document.createElement('a');
+            // tempLink.href = dataURL;
+            // tempLink.setAttribute('download', 'filename.json');
+            // tempLink.click();
+
+        }
         return (
 
             <FormControl>
@@ -196,7 +210,6 @@ class ModuleData extends React.Component {
                                     </Grid>
 
 
-
                                 </Form>
 
 
@@ -209,8 +222,8 @@ class ModuleData extends React.Component {
                                     justify="space-between"
                                 >
                                     <ButtonGroup variant="outlined" color="primary">
-                                        <Button component="label">
 
+                                        <Button component="label">
                                             Load
                                             <input type="file" accept=".json" onChange={
                                                 async (e) => {
@@ -219,27 +232,27 @@ class ModuleData extends React.Component {
                                                     reader.onload = async (e) => {
                                                         const text = (e.target.result)
                                                         let module_data = JSON.parse(text);
-                                                        console.log(module_data);                                                        setFieldValue('Voc',module_data.Voc)
-                                                        setFieldValue('Isc',module_data.Voc)
-                                                        setFieldValue('Voc',module_data.Isc)
-                                                        setFieldValue('Imp',module_data.Imp)
-                                                        setFieldValue('Vmp',module_data.Vmp)
-                                                        setFieldValue('N',module_data.N)
-                                                        setFieldValue('alpha',module_data.alpha)
-                                                        setFieldValue('beta',module_data.beta)
-                                                        setFieldValue('C',25)
-                                                        setFieldValue('G',1000)
-                                                        setFieldValue('cell_type',module_data.cell_type)
-
+                                                        console.log(module_data);
+                                                        setFieldValue('Voc', module_data.Voc)
+                                                        setFieldValue('Isc', module_data.Voc)
+                                                        setFieldValue('Voc', module_data.Isc)
+                                                        setFieldValue('Imp', module_data.Imp)
+                                                        setFieldValue('Vmp', module_data.Vmp)
+                                                        setFieldValue('N', module_data.N)
+                                                        setFieldValue('alpha', module_data.alpha)
+                                                        setFieldValue('beta', module_data.beta)
+                                                        setFieldValue('C', 25)
+                                                        setFieldValue('G', 1000)
+                                                        setFieldValue('cell_type', module_data.cell_type)
 
 
                                                     };
                                                     reader.readAsText(e.target.files[0])
                                                 }
                                             } hidden/>
-
                                         </Button>
-                                        <Button>
+
+                                        <Button onClick={saveData}>
                                             Save
                                         </Button>
                                     </ButtonGroup>
