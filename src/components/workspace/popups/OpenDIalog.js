@@ -10,7 +10,7 @@ export default function OpenDialog(props){
             component="label"
             variant="outlined"
             color="primary">
-            <OpenInBrowser/>
+            <OpenInBrowser fontSize="large"/>
             <input type="file" accept=".json" onChange={
                 async (e) => {
                     e.preventDefault()
@@ -19,16 +19,15 @@ export default function OpenDialog(props){
                         const text = (e.target.result)
                         let module_data = JSON.parse(text);
                         console.log(module_data);
-                        setFieldValue('Voc', module_data.Voc)
-                        setFieldValue('Isc', module_data.Voc)
-                        setFieldValue('Voc', module_data.Isc)
-                        setFieldValue('Imp', module_data.Imp)
-                        setFieldValue('Vmp', module_data.Vmp)
-                        setFieldValue('N', module_data.N)
+                        setFieldValue('isc', module_data.isc)
+                        setFieldValue('voc', module_data.voc)
+                        setFieldValue('imp', module_data.imp)
+                        setFieldValue('vmp', module_data.vmp)
+                        setFieldValue('n_ser', module_data.n_ser)
                         setFieldValue('alpha', module_data.alpha)
                         setFieldValue('beta', module_data.beta)
-                        setFieldValue('C', 25)
-                        setFieldValue('G', 1000)
+                        setFieldValue('c', 25)
+                        setFieldValue('g', 1000)
                         setFieldValue('cell_type', module_data.cell_type)
 
 

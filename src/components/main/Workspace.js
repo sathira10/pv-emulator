@@ -12,15 +12,15 @@ class Workspace extends React.Component {
         super(props);
         this.state = {
             data: {
-                Isc: '',
-                Voc: '',
-                Imp: '',
-                Vmp: '',
+                isc: '',
+                voc: '',
+                imp: '',
+                vmp: '',
                 alpha: '',
                 beta: '',
-                N: '',
-                C: '',
-                G: '',
+                n_ser: '',
+                c: '',
+                g: '',
                 cell_type: '',
             },
             parameters: {
@@ -54,6 +54,10 @@ class Workspace extends React.Component {
         this.setState({data: data})
     }
 
+    update_params = (params) => {
+        this.setState({parameters: params})
+    }
+
     get_data = () => {
         return (this.state.data);
     }
@@ -67,7 +71,7 @@ class Workspace extends React.Component {
                         <Box pt={4}>
                             <Paper display="flex" elevation={4}>
                                 <Box p={3}>
-                                    <Datasheet update={this.update_data} get={this.get_data}/>
+                                    <Datasheet update={this.update_data} get={this.get_data} setParams={this.update_params}/>
                                 </Box>
                             </Paper>
                         </Box>
@@ -79,7 +83,7 @@ class Workspace extends React.Component {
                                 <Images iv={this.state.iv_curve} pv={this.state.pv_curve}/>
                             </Box>
                             <Box>
-                                <Results/>
+                                <Results params={this.state.parameters}/>
                             </Box>
                             <Box>
                                 <Emulate getSerial={this.getSerial} setSerial={this.setSerial}/>

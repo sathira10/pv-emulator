@@ -29,7 +29,7 @@ export default function SaveDialog(props) {
     return (
         <div>
             <IconButton variant="outlined" color="primary" onClick={handleClickOpen}>
-                <Save/>
+                <Save fontSize="large"/>
             </IconButton>
             <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
                 <DialogTitle id="form-dialog-title">Save</DialogTitle>
@@ -55,7 +55,7 @@ export default function SaveDialog(props) {
                         const dataURL = window.URL.createObjectURL(blob);
                         let tempLink = document.createElement('a');
                         tempLink.href = dataURL;
-                        tempLink.download = panelName;
+                        tempLink.download = `${panelName}.json`;
                         tempLink.click();
                         setName("panel");
                         setOpen(false)

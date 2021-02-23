@@ -3,12 +3,14 @@ import {Formik, Form, Field} from 'formik';
 import {TextField} from 'formik-material-ui';
 import SaveDialog from "./popups/SaveDialog";
 import OpenDialog from "./popups/OpenDIalog";
+import axios from "axios";
 
 
 function ModuleData(props) {
 
     const update = props.update
     const get = props.get
+    const setParams = props.setParams
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -29,17 +31,13 @@ function ModuleData(props) {
 
     const ranges = [
         {
-            value: 0,
+            value: 'monoSi',
             label: 'Mono crystalline Silicon',
         },
         {
-            value: 1,
+            value: 'multiSi/polySi',
             label: 'Multi crystalline Silicon',
-        },
-        {
-            value: 2,
-            label: 'Thin film',
-        },
+        }
     ];
 
 
@@ -61,15 +59,15 @@ function ModuleData(props) {
 
                 enableReinitialize={true}
                 initialValues={{
-                    Isc: '',
-                    Voc: '',
-                    Imp: '',
-                    Vmp: '',
+                    isc: '',
+                    voc: '',
+                    imp: '',
+                    vmp: '',
                     alpha: '',
                     beta: '',
-                    N: '',
-                    C: '',
-                    G: '',
+                    n_ser: '',
+                    c: '',
+                    g: '',
                     cell_type: '',
                 }}
 
@@ -77,6 +75,21 @@ function ModuleData(props) {
                     setTimeout(() => {
                         setSubmitting(false);
                         update(values);
+
+                        let formData = new FormData();
+                        formData.append("isc", get().isc)
+                        formData.append("voc", get().voc)
+                        formData.append("imp", get().imp)
+                        formData.append("vmp", get().vmp)
+                        formData.append("n_ser", get().n_ser)
+                        formData.append("alpha", get().alpha)
+                        formData.append("beta", get().beta)
+                        formData.append("c", get().c)
+                        formData.append("g", get().g)
+                        formData.append("cell_type", get().cell_type)
+
+                        axios.post("http://127.0.0.1:5000/api/param_ext",formData)
+                            .then(response => setParams(response.data))
                     }, 500);
                 }}
             >
@@ -91,7 +104,7 @@ function ModuleData(props) {
                                         <Box margin={1}>
                                             <Field
                                                 component={TextField}
-                                                name="Isc"
+                                                name="isc"
                                                 type="number"
                                                 label={<span>I<sub>sc</sub></span>}
                                                 helperText="Short circuit current (Amps)"
@@ -100,7 +113,7 @@ function ModuleData(props) {
                                         <Box margin={1}>
                                             <Field
                                                 component={TextField}
-                                                name="Voc"
+                                                name="voc"
                                                 type="number"
                                                 label={<span>V<sub>oc</sub></span>}
                                                 helperText="Open circuit voltage (Volts)"
@@ -111,7 +124,7 @@ function ModuleData(props) {
                                         <Box margin={1}>
                                             <Field
                                                 component={TextField}
-                                                name="Imp"
+                                                name="imp"
                                                 type="number"
                                                 label={<span>I<sub>mp</sub></span>}
                                                 helperText="Max power point current (Amps)"
@@ -120,7 +133,7 @@ function ModuleData(props) {
                                         <Box margin={1}>
                                             <Field
                                                 component={TextField}
-                                                name="Vmp"
+                                                name="vmp"
                                                 type="number"
                                                 label={<span>V<sub>mp</sub></span>}
                                                 helperText="Max power point voltage (Volts)"
@@ -130,7 +143,7 @@ function ModuleData(props) {
                                         <Box margin={1}>
                                             <Field
                                                 component={TextField}
-                                                name="N"
+                                                name="n_ser"
                                                 type="number"
                                                 label="N"
                                                 helperText="Number of cells in series"
@@ -162,7 +175,7 @@ function ModuleData(props) {
                                         <Box margin={1}>
                                             <Field
                                                 component={TextField}
-                                                name="C"
+                                                name="c"
                                                 type="number"
                                                 label="T"
                                                 helperText={<span>Temperature (&deg;C)</span>}
@@ -172,7 +185,7 @@ function ModuleData(props) {
                                         <Box margin={1}>
                                             <Field
                                                 component={TextField}
-                                                name="G"
+                                                name="g"
                                                 type="number"
                                                 label="G"
                                                 helperText={<span>Irradiance level (Watts/m<sup>2</sup>)</span>}
@@ -212,12 +225,12 @@ function ModuleData(props) {
 
                         <Box pt={2}>
                             <Grid
-                                container
+
                                 direction="row"
                                 justify="space-between"
                                 className="content"
                             >
-                                <ButtonGroup variant="outlined" color="primary">
+                                <ButtonGroup >
 
                                     <OpenDialog
                                         setFieldValue={setFieldValue}>
@@ -232,7 +245,7 @@ function ModuleData(props) {
 
                                 </ButtonGroup>
 
-                                <ButtonGroup>
+                                <ButtonGroup >
                                     <Button
                                         variant="contained"
                                         color="primary"

@@ -19,7 +19,7 @@ a:hover {
 
 .content {
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     justify-content: flex-end;
     height: 100%;
     width: 100%;

@@ -72,15 +72,15 @@ class Results extends React.Component {
                         </Box>
                     </div>
 
-                    <div className="col-md-4">
-                        <Box pt={3} bp={3}>
-                            <CustomCard
-                                name={<span>V<sub>th</sub></span>}
-                                value="0"
-                                unit=""
-                                description="Thermal voltage (mV)"/>
-                        </Box>
-                    </div>
+                    {/*<div className="col-md-4">*/}
+                    {/*    <Box pt={3} bp={3}>*/}
+                    {/*        <CustomCard*/}
+                    {/*            name={<span>V<sub>th</sub></span>}*/}
+                    {/*            value="0"*/}
+                    {/*            unit=""*/}
+                    {/*            description="Thermal voltage (mV)"/>*/}
+                    {/*    </Box>*/}
+                    {/*</div>*/}
 
 
                 </div>
