@@ -24,11 +24,11 @@ class Workspace extends React.Component {
                 cell_type: '',
             },
             parameters: {
-                Iph: '23',
-                Io: '7e-10',
-                Rs: '',
-                Rsh: '',
-                A: '',
+                iph: '0',
+                io: '0',
+                rs: '0',
+                rsh: '0',
+                a: '0',
             },
             images: {
                 iv_curve: process.env.PUBLIC_URL + '/default_img.png',
