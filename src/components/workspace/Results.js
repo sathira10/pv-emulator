@@ -102,7 +102,7 @@ function CustomCard(props) {
                 <Typography color="textSecondary" gutterBottom>
                     {props.name}
                 </Typography>
-                <Typography variant="h5" component="h2">
+                <Typography variant="h5" component="h2" className="force-select">
                     {props.value}
                 </Typography>
                 <Typography color="textSecondary">
