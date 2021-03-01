@@ -1,6 +1,6 @@
 {
   "name": "my-react-app",
-  "homepage": "https://sathira10.github.io/pv-emulator-ui",
+  "homepage": "https://sathira10.github.io/pv-emulator-frontend",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

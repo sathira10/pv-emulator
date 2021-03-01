@@ -34,10 +34,7 @@ class Workspace extends React.Component {
                 iv_curve: process.env.PUBLIC_URL + '/default_img.png',
                 pv_curve: process.env.PUBLIC_URL + '/default_img.png',
             },
-            serial: {
-                port: "COM4",
-                connected: false
-            }
+            serial: "COM4"
         }
 
     }
@@ -60,6 +57,16 @@ class Workspace extends React.Component {
 
     get_data = () => {
         return (this.state.data);
+    }
+
+    restart_serial = () => {
+        console.log("RESTART")
+        //restart serial
+    }
+
+    hardware_emulate = () => {
+        console.log("EMULATE")
+        //emulate
     }
 
 
@@ -86,7 +93,12 @@ class Workspace extends React.Component {
                                 <Results params={this.state.parameters}/>
                             </Box>
                             <Box>
-                                <Emulate getSerial={this.getSerial} setSerial={this.setSerial}/>
+                                <Emulate
+                                    serial={this.state.serial}
+                                    setSerial={this.setSerial}
+                                    restartSerial={this.restart_serial}
+                                    hardwareEmulate={this.hardware_emulate}
+                                />
                             </Box>
 
                         </Box>
