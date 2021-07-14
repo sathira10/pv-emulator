@@ -1,2 +1,2 @@
 # pv-emulator-frontend
-React web application
+Preview: https://sathira10.github.io/pv-emulator-frontend/
