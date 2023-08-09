@@ -2,11 +2,11 @@ import Image from "next/image"
 
 export default function Images(props) {
 
-    // const iv = props.iv
-    // const pv = props.pv
+    const iv = props.iv
+    const pv = props.pv
 
-    // const ivx = Boolean(iv) ? iv : process.env.PUBLIC_URL + '/default_img.png'
-    // const pvx = Boolean(pv) ? iv : process.env.PUBLIC_URL + '/default_img.png'
+    const ivx = Boolean(iv) ? iv : '/default_img.png'
+    const pvx = Boolean(pv) ? iv : '/default_img.png'
 
 
     return (
@@ -15,10 +15,10 @@ export default function Images(props) {
         <div className='row'>
             <div className="col-md-6">
                 <Image
-                    src="/default_img.png"
+                    src={iv}
                     width={800}
                     height={450}
-                    alt="Picture of the author"
+                    alt="IV curve"
                     layout="responsive"
 
                     
@@ -26,10 +26,10 @@ export default function Images(props) {
             </div>
             <div className="col-md-6">
                 <Image
-                    src="/default_img.png"
+                    src={pv}
                     width={800}
                     height={450}
-                    alt="Picture of the author"
+                    alt="PV Curve"
                     layout="responsive"
 
                 />            
