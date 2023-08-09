@@ -18,7 +18,7 @@ Sample data file - [Kyocera KC200GT](https://raw.githubusercontent.com/sathira10
 
 ## 🛠️ Backend Integration
 
-To get the app to fully function it's essential to run the backend locally. For detailed instructions, please refer to the backend repository.
+To get the UI to fully function it's essential to run the backend locally. For detailed instructions, please refer to the backend repository.
 
 Backend Repository: https://github.com/sathira10/pv-emulator-backend
 
