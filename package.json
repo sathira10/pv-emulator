@@ -2,12 +2,14 @@
   "name": "pv-emulator-frontend",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://sathira10.github.io/pv-emulator",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "export": "next export"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
@@ -23,5 +25,8 @@
     "react": "^18.2.0",
     "react-dom": "18.2.0",
     "write-json-file": "^5.0.0"
+  },
+  "devDependencies": {
+    "gh-pages": "^5.0.0"
   }
 }
