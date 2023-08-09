@@ -13,7 +13,7 @@ The frontend was migrated from `create-react-app` and the deprecated `material-u
 
 A preview of the frontend is available at - https://pv-emulator.web.app
 
-Sample data file - [Kyocera KC200GT](https://github.com/sathira10/pv-emulator/docs/kc200gt.json)
+Sample data file - [Kyocera KC200GT](https://raw.githubusercontent.com/sathira10/pv-emulator/main/docs/kc200gt.json)
 
 
 ## 🛠️ Backend Integration
