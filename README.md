@@ -23,7 +23,7 @@ To get the UI to fully function it's essential to run the backend locally. For d
 Backend Repository: https://github.com/sathira10/pv-emulator-backend
 
 
-## 🤝 Contributors
+## 🎓 Project Members
 
 - Sathira Tennakoon
 - Imasha Balahewa
