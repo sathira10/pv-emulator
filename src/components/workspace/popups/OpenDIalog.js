@@ -28,10 +28,11 @@ export default function OpenDialog(props) {
                         setFieldValue('c', 25)
                         setFieldValue('g', 1000)
                         setFieldValue('cell_type', module_data.cell_type)
-
+                        props.update(module_data)
 
                     };
                     reader.readAsText(e.target.files[0])
+
                 }
             } hidden />
         </IconButton>

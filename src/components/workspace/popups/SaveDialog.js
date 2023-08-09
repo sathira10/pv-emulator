@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { Button, TextField, Dialog, DialogActions, DialogContent, DialogTitle, IconButton} from '@mui/material';
+import { Button, TextField, Dialog, DialogActions, DialogContent, DialogTitle, IconButton } from '@mui/material';
 import { Save } from '@mui/icons-material';
 
 export default function SaveDialog(props) {
@@ -23,7 +23,7 @@ export default function SaveDialog(props) {
     return (
         <div>
             <IconButton variant="outlined" color="primary" onClick={handleClickOpen}>
-                <Save fontSize="large"/>
+                <Save fontSize="large" />
             </IconButton>
             <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
                 <DialogTitle id="form-dialog-title">Save</DialogTitle>
@@ -45,7 +45,7 @@ export default function SaveDialog(props) {
                     <Button onClick={async () => {
                         await (props.update(props.values));
                         const data = JSON.stringify(props.get());
-                        const blob = new Blob([data], {type: 'application/popups;charset=utf-8'});
+                        const blob = new Blob([data], { type: 'application/popups;charset=utf-8' });
                         const dataURL = window.URL.createObjectURL(blob);
                         let tempLink = document.createElement('a');
                         tempLink.href = dataURL;

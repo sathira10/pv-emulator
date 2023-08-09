@@ -77,6 +77,7 @@ function ModuleData(props) {
                         setSubmitting(false);
                         update(values);
 
+
                         let formData = new FormData();
                         formData.append("isc", get().isc)
                         formData.append("voc", get().voc)
@@ -244,7 +245,9 @@ function ModuleData(props) {
                                 <ButtonGroup >
 
                                     <OpenDialog
-                                        setFieldValue={setFieldValue}>
+                                        setFieldValue={setFieldValue}
+                                        update={update}
+                                    >
                                     </OpenDialog>
 
                                     <SaveDialog

@@ -21,7 +21,7 @@ export default function Images(props) {
                     alt="IV curve"
                     layout="responsive"
 
-                    
+
                 />
             </div>
             <div className="col-md-6">
@@ -32,7 +32,7 @@ export default function Images(props) {
                     alt="PV Curve"
                     layout="responsive"
 
-                />            
+                />
             </div>
         </div>
 

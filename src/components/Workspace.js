@@ -30,8 +30,8 @@ const Workspace = () => {
     });
 
     const [images, setImages] = useState({
-        iv_curve: process.env.PUBLIC_URL + '/default_img.png',
-        pv_curve: process.env.PUBLIC_URL + '/default_img.png'
+        iv_curve: '/default_img.png',
+        pv_curve: '/default_img.png'
     });
 
     const [serial, setSerial] = useState("COM4");
@@ -43,8 +43,8 @@ const Workspace = () => {
     const update_params = (params) => {
         setParameters(params);
         setImages({
-            iv_curve: "http://127.0.0.1:5000/static/"+params.iv,
-            pv_curve: "http://127.0.0.1:5000/static/"+params.pv
+            iv_curve: "http://127.0.0.1:5000/static/" + params.iv,
+            pv_curve: "http://127.0.0.1:5000/static/" + params.pv
         });
     }
 
@@ -59,14 +59,14 @@ const Workspace = () => {
     }
 
     return (
-        <div className="container-fluid mb-2" style={{width: "90%"}}>
+        <div className="container-fluid mb-2" style={{ width: "90%" }}>
             <div className="row d-flex">
                 <div className="col-lg-5 justify-content-center">
                     <Box pt={4}>
                         <Paper display="flex" elevation={4}>
                             <Box p={3}>
-                                <Datasheet update={update_data} get={() => data}
-                                           setParams={update_params}/>
+                                <Datasheet update={setData} get={() => data}
+                                    setParams={update_params} />
                             </Box>
                         </Paper>
                     </Box>
@@ -74,17 +74,17 @@ const Workspace = () => {
                 <div className="col-lg-7">
                     <Box pt={4}>
                         <Box>
-                            <Images iv={images.iv_curve} pv={images.pv_curve}/>
+                            <Images iv={images.iv_curve} pv={images.pv_curve} />
                         </Box>
                         <Box>
-                            <Results params={parameters}/>
+                            <Results params={parameters} />
                         </Box>
                         <Box>
                             <Emulate
                                 serial={serial}
                                 setSerial={setSerial}
                                 restartSerial={restart_serial}
-                                hardwareEmulate={hardware_emulate}/>
+                                hardwareEmulate={hardware_emulate} />
                         </Box>
                     </Box>
                 </div>
