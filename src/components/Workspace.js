@@ -1,10 +1,10 @@
 import React from "react";
-import {Box, Paper} from "@material-ui/core";
+import { Box, Paper } from "@mui/material";
 
-import Datasheet from "../workspace/Datasheet";
-import Results from "../workspace/Results";
-import Images from "../workspace/Images";
-import Emulate from "../workspace/Emulate";
+import Datasheet from "./workspace/Datasheet";
+import Results from "./workspace/Results";
+import Images from "./workspace/Images";
+import Emulate from "./workspace/Emulate";
 
 class Workspace extends React.Component {
 

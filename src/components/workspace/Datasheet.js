@@ -1,9 +1,10 @@
-import {Box, FormControl, Typography, Button, MenuItem, Grid, ButtonGroup} from "@material-ui/core";
-import {Formik, Form, Field} from 'formik';
-import {TextField} from 'formik-material-ui';
+import axios from "axios";
+import { Box, FormControl, Typography, Button, MenuItem, Grid, ButtonGroup } from "@mui/material";
+import { Formik, Form, Field } from 'formik';
+import { TextField } from 'formik-mui';
+
 import SaveDialog from "./popups/SaveDialog";
 import OpenDialog from "./popups/OpenDIalog";
-import axios from "axios";
 
 
 function ModuleData(props) {
@@ -71,7 +72,7 @@ function ModuleData(props) {
                     cell_type: '',
                 }}
 
-                onSubmit={(values, {setSubmitting}) => {
+                onSubmit={(values, { setSubmitting }) => {
                     setTimeout(() => {
                         setSubmitting(false);
                         update(values);
@@ -88,12 +89,12 @@ function ModuleData(props) {
                         formData.append("g", get().g)
                         formData.append("cell_type", get().cell_type)
 
-                        axios.post("http://127.0.0.1:5000/api/param_ext",formData)
+                        axios.post("http://127.0.0.1:5000/api/param_ext", formData)
                             .then(response => setParams(response.data))
                     }, 500);
                 }}
             >
-                {({submitForm, isSubmitting, setFieldValue, values}) => (
+                {({ submitForm, isSubmitting, setFieldValue, values }) => (
                     <div>
                         <Grid justify="center" alignItems="center">
                             <Form>
@@ -103,6 +104,7 @@ function ModuleData(props) {
 
                                         <Box margin={1}>
                                             <Field
+                                                fullWidth
                                                 component={TextField}
                                                 name="isc"
                                                 type="number"
@@ -112,6 +114,7 @@ function ModuleData(props) {
                                         </Box>
                                         <Box margin={1}>
                                             <Field
+                                                fullWidth
                                                 component={TextField}
                                                 name="voc"
                                                 type="number"
@@ -123,6 +126,7 @@ function ModuleData(props) {
 
                                         <Box margin={1}>
                                             <Field
+                                                fullWidth
                                                 component={TextField}
                                                 name="imp"
                                                 type="number"
@@ -132,6 +136,7 @@ function ModuleData(props) {
                                         </Box>
                                         <Box margin={1}>
                                             <Field
+                                                fullWidth
                                                 component={TextField}
                                                 name="vmp"
                                                 type="number"
@@ -142,6 +147,7 @@ function ModuleData(props) {
 
                                         <Box margin={1}>
                                             <Field
+                                                fullWidth
                                                 component={TextField}
                                                 name="n_ser"
                                                 type="number"
@@ -154,6 +160,7 @@ function ModuleData(props) {
                                     <Grid item>
                                         <Box margin={1}>
                                             <Field
+                                                fullWidth
                                                 component={TextField}
                                                 name="alpha"
                                                 type="number"
@@ -164,6 +171,7 @@ function ModuleData(props) {
 
                                         <Box margin={1}>
                                             <Field
+                                                fullWidth
                                                 component={TextField}
                                                 name="beta"
                                                 type="number"
@@ -174,6 +182,7 @@ function ModuleData(props) {
 
                                         <Box margin={1}>
                                             <Field
+                                                fullWidth
                                                 component={TextField}
                                                 name="c"
                                                 type="number"
@@ -184,6 +193,7 @@ function ModuleData(props) {
 
                                         <Box margin={1}>
                                             <Field
+                                                fullWidth
                                                 component={TextField}
                                                 name="g"
                                                 type="number"
@@ -195,6 +205,7 @@ function ModuleData(props) {
 
                                         <Box margin={1}>
                                             <Field
+                                                fullWidth
                                                 component={TextField}
                                                 type="text"
                                                 name="cell_type"

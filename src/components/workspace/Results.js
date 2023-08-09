@@ -1,24 +1,4 @@
-import React from 'react';
-import {CardContent, Typography, Card, Box} from "@material-ui/core";
-
-
-// useStyles = makeStyles({
-//     root: {
-//         minWidth: 275,
-//     },
-//     bullet: {
-//         display: 'inline-block',
-//         margin: '0 2px',
-//         transform: 'scale(0.8)',
-//     },
-//     title: {
-//         fontSize: 14,
-//     },
-//     pos: {
-//         marginBottom: 12,
-//     },
-// });
-
+import { CardContent, Typography, Card, Box } from '@mui/material';
 
 export default function Results(props) {
 
@@ -32,7 +12,7 @@ export default function Results(props) {
                         <CustomCard
                             name={<span>I<sub>ph</sub></span>}
                             value={props.params.iph}
-                            description="Photo current (A)"/>
+                            description="Photo current (A)" />
                     </Box>
                 </div>
 
@@ -41,7 +21,7 @@ export default function Results(props) {
                         <CustomCard
                             name={<span>I<sub>o</sub></span>}
                             value={props.params.io}
-                            description="Saturation current (A)"/>
+                            description="Saturation current (A)" />
                     </Box>
                 </div>
 
@@ -50,7 +30,7 @@ export default function Results(props) {
                         <CustomCard
                             name="A"
                             value={props.params.a}
-                            description="Diode ideality factor"/>
+                            description="Diode ideality factor" />
                     </Box>
                 </div>
 
@@ -59,7 +39,7 @@ export default function Results(props) {
                         <CustomCard
                             name={<span>R<sub>sh</sub></span>}
                             value={props.params.rs}
-                            description={<span>Series resistance{<span> (&Omega;)</span>}</span>}/>
+                            description={<span>Series resistance{<span> (&Omega;)</span>}</span>} />
                     </Box>
                 </div>
 
@@ -68,7 +48,7 @@ export default function Results(props) {
                         <CustomCard
                             name={<span>R<sub>s</sub></span>}
                             value={props.params.rsh}
-                            description={<span>Shunt resistance{<span> (&Omega;)</span>}</span>}/>
+                            description={<span>Shunt resistance{<span> (&Omega;)</span>}</span>} />
                     </Box>
                 </div>
 

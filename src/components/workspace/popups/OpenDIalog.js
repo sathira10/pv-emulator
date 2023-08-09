@@ -1,16 +1,15 @@
-import {IconButton} from "@material-ui/core";
-import {OpenInBrowser} from "@material-ui/icons";
-import React from "react";
+import { IconButton } from "@mui/material";
+import { OpenInBrowser } from "@mui/icons-material";
 
-export default function OpenDialog(props){
+export default function OpenDialog(props) {
 
     const setFieldValue = props.setFieldValue;
-    return(
+    return (
         <IconButton
             component="label"
             variant="outlined"
             color="primary">
-            <OpenInBrowser fontSize="large"/>
+            <OpenInBrowser fontSize="large" />
             <input type="file" accept=".json" onChange={
                 async (e) => {
                     e.preventDefault()
@@ -34,7 +33,7 @@ export default function OpenDialog(props){
                     };
                     reader.readAsText(e.target.files[0])
                 }
-            } hidden/>
+            } hidden />
         </IconButton>
     )
 }

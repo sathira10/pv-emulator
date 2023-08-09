@@ -1,16 +1,10 @@
-import TuneIcon from "@material-ui/icons/Tune";
-import {FormControl, IconButton, InputLabel, MenuItem, Select} from "@material-ui/core";
-import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight';
-import React from 'react';
-import Button from '@material-ui/core/Button';
-import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
-import DialogContent from '@material-ui/core/DialogContent';
-import DialogContentText from '@material-ui/core/DialogContentText';
-import DialogTitle from '@material-ui/core/DialogTitle';
+import { useState } from "react";
+
+import {Tune, KeyboardArrowRight} from "@mui/icons-material";
+import {FormControl, IconButton, InputLabel, MenuItem, Select, Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle} from "@mui/material";
 
 export default function SerialDialog(props) {
-    const [open, setOpen] = React.useState(false);
+    const [open, setOpen] = useState(false);
 
     const handleClickOpen = () => {
         setOpen(true);
@@ -29,7 +23,7 @@ export default function SerialDialog(props) {
     return (
         <>
             <IconButton variant="outlined" color="secondary" onClick={handleClickOpen}>
-                <TuneIcon fontSize="large"/>
+                <Tune fontSize="large"/>
             </IconButton>
             <Dialog
                 fullWidth
@@ -39,11 +33,11 @@ export default function SerialDialog(props) {
                 aria-labelledby="alert-dialog-title"
                 aria-describedby="alert-dialog-description"
             >
-                <DialogTitle id="alert-dialog-title">{"Serial Settings"}</DialogTitle>
+                <DialogTitle id="alert-dialog-title">{"Select Serial Port"}</DialogTitle>
                 <DialogContent>
                     <DialogContentText id="alert-dialog-description">
                         <FormControl style={{minWidth: 120}}>
-                            <InputLabel id="demo-simple-select-label">Select Port</InputLabel>
+                            {/* <InputLabel id="demo-simple-select-label">Select Port</InputLabel> */}
                             <Select
                                 labelId="demo-simple-select-label"
                                 id="demo-simple-select"
@@ -59,7 +53,7 @@ export default function SerialDialog(props) {
                     </DialogContentText>
                 </DialogContent>
                 <DialogActions>
-                    <Button onClick={handleConnect} color="primary" autoFocus startIcon={<KeyboardArrowRightIcon/>}>
+                    <Button onClick={handleConnect} color="primary" autoFocus startIcon={<KeyboardArrowRight/>}>
                         Connect
                     </Button>
                 </DialogActions>

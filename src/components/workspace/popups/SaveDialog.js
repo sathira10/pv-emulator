@@ -1,17 +1,11 @@
-import React from 'react';
-import Button from '@material-ui/core/Button';
-import TextField from '@material-ui/core/TextField';
-import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
-import DialogContent from '@material-ui/core/DialogContent';
-import DialogTitle from '@material-ui/core/DialogTitle';
-import {Save} from "@material-ui/icons";
-import {IconButton} from "@material-ui/core";
+import { useState } from 'react';
 
+import { Button, TextField, Dialog, DialogActions, DialogContent, DialogTitle, IconButton} from '@mui/material';
+import { Save } from '@mui/icons-material';
 
 export default function SaveDialog(props) {
-    const [open, setOpen] = React.useState(false);
-    let [panelName, setName] = React.useState('panel')
+    const [open, setOpen] = useState(false);
+    let [panelName, setName] = useState('panel')
 
     const handleClickOpen = () => {
         setOpen(true);

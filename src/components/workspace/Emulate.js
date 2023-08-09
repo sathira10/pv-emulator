@@ -1,6 +1,5 @@
-import {Box, Button, Grid} from "@material-ui/core";
+import { Box, Button, Grid } from "@mui/material";
 import SerialDialog from "./popups/SerialDialog";
-import React from "react";
 
 export default function Emulate(props) {
     return (
@@ -12,11 +11,11 @@ export default function Emulate(props) {
                 className="content"
             >
                 <div>
-                    <SerialDialog serial={props.serial} setSerial={props.setSerial} restartSerial={props.restartSerial}/>
+                    <SerialDialog serial={props.serial} setSerial={props.setSerial} restartSerial={props.restartSerial} />
                     <Button
                         variant="contained"
                         color="secondary"
-                    onClick={props.hardwareEmulate}>
+                        onClick={props.hardwareEmulate}>
                         Emulate
                     </Button>
                 </div>
